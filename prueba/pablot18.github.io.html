@@ -1,0 +1,771 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    />
+    <meta
+        name="robots"
+        content="noindex, nofollow, noarchive"
+    />
+    <title>Proyecto Integrador - API REST segura para gestión de eventos académicos</title>
+
+    <link
+        rel="stylesheet"
+        href="../css/styles.css"
+    >
+</head>
+
+<body>
+    <div
+        id="securityOverlay"
+        class="security-overlay"
+        aria-hidden="true"
+    >
+        <div class="security-overlay-content">
+            <strong>Contenido temporalmente oculto</strong>
+            <p>Regrese a esta ventana para continuar.</p>
+        </div>
+    </div>
+
+    <main
+        class="page"
+        id="practice-content"
+    >
+        <table class="guide-table">
+            <tr>
+                <td class="logo-cell">
+                    <img
+                        src="../assets/ups-svg-plain.svg"
+                        alt="Logo UPS"
+                        class="logo-img"
+                    >
+                </td>
+                <td
+                    colspan="4"
+                    class="title-cell"
+                >
+                    FORMATO DE GUÍA DE PROYECTO INTEGRADOR
+                </td>
+            </tr>
+
+            <tr>
+                <td colspan="5">&nbsp;</td>
+            </tr>
+
+            <tr>
+                <td colspan="2"><strong>CARRERA:</strong> Computación</td>
+                <td colspan="3"><strong>ASIGNATURA:</strong> Programación y Plataformas Web</td>
+            </tr>
+
+            <tr>
+                <td><strong>NRO. PRÁCTICA:</strong></td>
+                <td>Proyecto final</td>
+                <td colspan="3">
+                    <strong>TÍTULO DEL PROYECTO:</strong> API REST segura para la gestión de eventos académicos
+                </td>
+            </tr>
+
+            <tr>
+                <td colspan="5">
+                    <strong>OBJETIVO</strong>
+                    <p>
+                        Desarrollar y desplegar una API REST robusta con Spring Boot y PostgreSQL para gestionar
+                        usuarios, eventos académicos, sesiones e inscripciones, aplicando seguridad JWT, autorización
+                        por roles, Redis, validación, manejo centralizado de excepciones, documentación OpenAPI,
+                        observabilidad y generación de reportes descargables.
+                    </p>
+                </td>
+            </tr>
+
+            <tr>
+                <td class="section-label">INSTRUCCIONES:</td>
+                <td
+                    colspan="4"
+                    class="section-content"
+                >
+                    <ol>
+                        <li>Revisar los contenidos y prácticas desarrolladas durante la asignatura.</li>
+                        <li>Resolver el proyecto en parejas.</li>
+                        <li>Utilizar Spring Boot y PostgreSQL. No se permite usar Firebase, Strapi ni otro Backend as a
+                            Service para reemplazar la lógica solicitada.</li>
+                        <li>Presentar un video técnico de máximo 10 minutos.</li>
+                        <li>Demostrar el funcionamiento desde Swagger UI y la URL pública desplegada.</li>
+                        <li>Cada integrante deberá explicar código desarrollado por él y responder preguntas técnicas.
+                        </li>
+                    </ol>
+                </td>
+            </tr>
+
+            <tr>
+                <td colspan="5">
+                    <h3>ASIGNATURAS Y CONOCIMIENTOS RELACIONADOS AL PROYECTO INTEGRADOR</h3>
+                    <table class="rubric">
+                        <thead>
+                            <tr>
+                                <th>Asignatura</th>
+                                <th>Contenido relacionado</th>
+                                <th>Aporte</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Programación</td>
+                                <td>Lógica, validaciones y reglas de negocio</td>
+                                <td class="center">15 %</td>
+                            </tr>
+                            <tr>
+                                <td>Programación orientada a objetos</td>
+                                <td>Entidades, servicios, DTO y mapeadores</td>
+                                <td class="center">15 %</td>
+                            </tr>
+                            <tr>
+                                <td>Programación aplicada</td>
+                                <td>Arquitectura modular y patrones de desarrollo</td>
+                                <td class="center">10 %</td>
+                            </tr>
+                            <tr>
+                                <td>Fundamentos de bases de datos</td>
+                                <td>Modelo relacional, consultas y transacciones</td>
+                                <td class="center">10 %</td>
+                            </tr>
+                            <tr>
+                                <td>Programación y Plataformas Web</td>
+                                <td>API REST, seguridad, pruebas y despliegue</td>
+                                <td class="center">50 %</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </td>
+            </tr>
+
+            <tr>
+                <td colspan="5">
+                    <h3>ACTIVIDADES POR DESARROLLAR</h3>
+
+                    <h4>Tecnologías obligatorias</h4>
+                    <p>
+                        Spring Web, Spring Data JPA, Spring Security, Bean Validation, PostgreSQL, JWT,
+                        Spring Data Redis, Bucket4j o equivalente, Springdoc OpenAPI, Spring Boot Actuator, JUnit,
+                        Mockito y Docker. Para los reportes se podrá utilizar Apache POI, OpenPDF u otra librería
+                        equivalente.
+                    </p>
+
+                    <h4>1. Arquitectura general</h4>
+                    <p>Implementar un monolito modular organizado por dominio. Cada módulo deberá separar:</p>
+                    <ul>
+                        <li>Controladores.</li>
+                        <li>Servicios e interfaces de servicio.</li>
+                        <li>Repositorios.</li>
+                        <li>Entidades.</li>
+                        <li>DTO de entrada y respuesta.</li>
+                        <li>Mapeadores.</li>
+                        <li>Excepciones específicas.</li>
+                    </ul>
+
+                    <h4>2. Modelo de datos</h4>
+                    <p>La base de datos deberá contener como mínimo:</p>
+                    <table class="rubric">
+                        <thead>
+                            <tr>
+                                <th>Entidad</th>
+                                <th>Responsabilidad</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td><code>users</code></td>
+                                <td>Usuarios, credenciales, estado</td>
+                            </tr>
+                            <tr>
+                                <td><code>roles</code></td>
+                                <td>Roles ADMIN, ORGANIZER y PARTICIPANT.</td>
+                            </tr>
+                            <tr>
+                                <td><code>user_roles</code></td>
+                                <td>Relación de usuarios y roles.</td>
+                            </tr>
+                            <tr>
+                                <td><code>categories</code></td>
+                                <td>Categorías de eventos.</td>
+                            </tr>
+                            <tr>
+                                <td><code>events</code></td>
+                                <td>Evento, modalidad, cupo, fechas, organizador y estado.</td>
+                            </tr>
+                            <tr>
+                                <td><code>sessions</code></td>
+                                <td>Sesiones y horarios de cada evento.</td>
+                            </tr>
+                            <tr>
+                                <td><code>registrations</code></td>
+                                <td>Inscripciones de participantes.</td>
+                            </tr>
+
+                            <tr>
+                                <td><code>audit_logs</code></td>
+                                <td>Auditoría de operaciones críticas.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <p>
+                        La base de datos será proporcionada mediante scripts SQL que contienen la creación de las
+                        tablas,
+                        relaciones, restricciones y registros iniciales necesarios para ejecutar el proyecto.
+                    </p>
+
+                    <p>
+                        Antes de iniciar la aplicación, los estudiantes deberán crear la base de datos y ejecutar los
+                        scripts
+                        entregados sobre una instancia de PostgreSQL. Las entidades JPA deberán construirse a partir de
+                        la
+                        estructura, relaciones y tipos de datos definidos en dichos scripts.
+                    </p>
+
+                    <p>
+                        La aplicación no deberá crear ni modificar automáticamente la estructura de la base de datos.
+                        Hibernate deberá configurarse con <code>ddl-auto=validate</code> para verificar que las
+                        entidades JPA
+                        sean compatibles con las tablas existentes.
+                    </p>
+
+                    <h4>Ejecución de los scripts SQL</h4>
+
+                    <p>
+                        Se entregarán los siguientes archivos:
+                    </p>
+
+                    <ul>
+                        <li>
+                            <code>00_create_database.sql</code>: crea la base de datos
+                            <code>academic_events_db</code>.
+                        </li>
+                        <li>
+                            <code>01_schema_and_data.sql</code>: crea las tablas, relaciones, restricciones, índices y
+                            registros
+                            iniciales.
+                        </li>
+                    </ul>
+
+                    <p>
+                        Los scripts deberán ejecutarse en el orden indicado. Si PostgreSQL se encuentra ejecutándose
+                        dentro
+                        de Docker, los comandos deberán ejecutarse desde la carpeta donde se encuentran los archivos
+                        SQL.
+                    </p>
+
+                    <pre class="code-line">docker exec -i postgres-dev psql -U ups -d postgres &lt; 00_create_database.sql
+
+docker exec -i postgres-dev psql -U ups -d academic_events_db &lt; 01_schema_and_data.sql</pre>
+
+                    <p>
+                        Para verificar que las tablas fueron creadas correctamente, ejecutar:
+                    </p>
+
+                    <pre class="code-line">docker exec -it postgres-dev psql -U ups -d academic_events_db -c "\dt"</pre>
+
+
+                    <div class="download-list">
+                        <div class="download-file">
+                            <a
+                                href="files/00_create_database.sql"
+                                download="00_create_database.sql"
+                                class="download-button"
+                            >
+                                Descargar script de creación de la base de datos
+                            </a>
+
+                            <a
+                                href="files/00_create_database.sql"
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                class="view-file-link"
+                            >
+                                Ver archivo
+                            </a>
+                        </div>
+
+                        <div class="download-file">
+                            <a
+                                href="files/01_schema_and_data.sql"
+                                download="01_schema_and_data.sql"
+                                class="download-button"
+                            >
+                                Descargar script de tablas y datos
+                            </a>
+
+                            <a
+                                href="files/V1__initial_schema_and_data.sql"
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                class="view-file-link"
+                            >
+                                Ver archivo
+                            </a>
+                        </div>
+                    </div>
+                    <h4>3. Roles y permisos</h4>
+                    <ul>
+                        <li><strong>ADMIN:</strong> administra usuarios, roles, categorías, estados y reportes
+                            generales.</li>
+                        <li><strong>ORGANIZER:</strong> gestiona únicamente sus eventos, sesiones e inscripciones.</li>
+                        <li><strong>PARTICIPANT:</strong> consulta eventos, crea y cancela sus propias inscripciones.
+                        </li>
+                    </ul>
+                    <p>
+                        Además del rol, se deberá validar la propiedad del recurso. Un organizador no podrá modificar
+                        eventos pertenecientes a otro organizador.
+                    </p>
+
+                    <div data-include-html="partials/flujo-endpoints.html"></div>
+                    <noscript>
+                        <h4>4. Flujo funcional y endpoints mínimos</h4>
+
+                        <p>Esta sección requiere JavaScript habilitado para mostrarse correctamente.</p>
+                    </noscript>
+
+
+                    <h4>5. Autenticación y autorización</h4>
+                    <ul>
+                        <li>Registro, inicio de sesión, renovación, cierre de sesión y consulta del usuario autenticado.
+                        </li>
+                        <li>Contraseñas cifradas con BCrypt.</li>
+                        <li>Access token JWT con tiempo de expiración corto.</li>
+                        <li>Refresh token con expiración y revocación.</li>
+                        <li>Protección de endpoints mediante Spring Security y <code>@PreAuthorize</code>.</li>
+                        <li>Mensajes de autenticación genéricos para evitar revelar si un correo existe.</li>
+                    </ul>
+
+                    <h4>6. Redis y rate limiting</h4>
+
+                    <p>
+                        Redis será obligatorio para almacenar información temporal utilizada por los mecanismos de
+                        seguridad y rendimiento
+                        del sistema. No deberá emplearse como almacenamiento permanente de usuarios, eventos,
+                        inscripciones ni otra
+                        información principal, la cual deberá persistirse en PostgreSQL.
+                    </p>
+
+                    <code>implementation 'org.springframework.boot:spring-boot-starter-data-redis'</code>
+
+                    <p>Redis deberá utilizarse para implementar las siguientes funcionalidades:</p>
+
+                    <ul>
+                        <li>
+                            Rate limiting distribuido mediante contadores temporales asociados a una dirección IP o
+                            usuario.
+                        </li>
+                        <li>
+                            Bloqueo temporal de usuarios o direcciones IP después de varios intentos fallidos.
+                        </li>
+                    </ul>
+
+                    <p>
+                        Las claves deberán utilizar prefijos que identifiquen su finalidad, como
+                        <code>blocked-user:</code> Todas las claves temporales deberán
+                        tener un TTL definido.
+                    </p>
+
+                    <h4>7. Límites de solicitudes</h4>
+
+                    <p>
+                        El rate limiting deberá implementarse utilizando Redis. Antes de procesar una solicitud, la API
+                        deberá incrementar
+                        de forma atómica el contador asociado a la dirección IP o al usuario autenticado. Cuando se
+                        supere el límite
+                        configurado, deberá responder con el código <code>429 Too Many Requests</code> e incluir el
+                        encabezado
+                        <code>Retry-After</code>.
+                    </p>
+
+                    <table class="rubric">
+                        <thead>
+                            <tr>
+                                <th>Operación</th>
+                                <th>Identificador</th>
+                                <th>Límite máximo permitido</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Inicio de sesión</td>
+                                <td>Dirección IP y correo</td>
+                                <td>5 solicitudes por minuto</td>
+                            </tr>
+                            <tr>
+                                <td>Registro</td>
+                                <td>Dirección IP</td>
+                                <td>3 solicitudes por hora</td>
+                            </tr>
+                            <tr>
+                                <td>Endpoints públicos</td>
+                                <td>Dirección IP</td>
+                                <td>60 solicitudes por minuto</td>
+                            </tr>
+                            <tr>
+                                <td>Endpoints autenticados</td>
+                                <td>Usuario autenticado</td>
+                                <td>120 solicitudes por minuto</td>
+                            </tr>
+                            <tr>
+                                <td>Generación de reportes</td>
+                                <td>Usuario autenticado</td>
+                                <td>5 solicitudes por minuto</td>
+                            </tr>
+                        </tbody>
+                    </table>
+
+                    <h4>8. CORS restringido</h4>
+                    <ul>
+                        <li>Los orígenes permitidos deberán obtenerse desde una variable de entorno.</li>
+                        <li>Restringir métodos a <code>GET</code>, <code>POST</code>, <code>PUT</code>,
+                            <code>PATCH</code>, <code>DELETE</code> y <code>OPTIONS</code>.
+                        </li>
+                        <li>Restringir encabezados a los necesarios, como <code>Authorization</code> y
+                            <code>Content-Type</code>.
+                        </li>
+                        <li>No se permite utilizar <code>*</code> como origen en producción.</li>
+                        <li>No habilitar credenciales si la estrategia de autenticación no las necesita.</li>
+                    </ul>
+
+                    <h4>9. Reglas de negocio y transacciones</h4>
+                    <ul>
+                        <li>No permitir correos ni categorías duplicadas.</li>
+                        <li>No permitir dos inscripciones del mismo participante en un evento.</li>
+                        <li>No permitir inscripciones en eventos finalizados o sin cupos.</li>
+                        <li>Registrar la inscripción y actualizar la disponibilidad dentro de una transacción.</li>
+                        <li>No eliminar físicamente un evento publicado con inscripciones.</li>
+
+                        <li>Aplicar paginación, filtros, búsqueda y ordenamiento en los listados.</li>
+                    </ul>
+
+                    <h4>10. Manejo centralizado de excepciones</h4>
+                    <p>
+                        Implementar <code>@RestControllerAdvice</code> y respuestas uniformes con fecha, código HTTP,
+                        código interno, mensaje y ruta. Se deberán manejar errores de validación por campo y, como
+                        mínimo, recursos inexistentes, duplicados, reglas de negocio, acceso prohibido, falta de cupos,
+                        tokens inválidos y exceso de solicitudes.
+                    </p>
+
+                    <h4>11. Swagger y OpenAPI protegidos</h4>
+                    <ul>
+                        <li>Documentar endpoints, parámetros, DTO, respuestas, códigos HTTP y ejemplos.</li>
+                        <li>Configurar el esquema Bearer JWT para probar endpoints protegidos.</li>
+                        <li>Proteger <code>/swagger-ui/**</code> y <code>/v3/api-docs/**</code> en producción mediante
+                            credenciales de evaluación.</li>
+                        <li>Las credenciales de Swagger deberán configurarse mediante variables de entorno.</li>
+                    </ul>
+
+                    <h4>12. Actuator y observabilidad</h4>
+                    <p>Incluir la dependencia:</p>
+                    <pre class="code-line">implementation 'org.springframework.boot:spring-boot-starter-actuator'</pre>
+                    <ul>
+                        <li>Exponer públicamente solo <code>/actuator/health</code>, sin detalles internos.</li>
+                    </ul>
+
+                    <h4>13. Reportes, estadísticas y archivos descargables</h4>
+
+                    <p>
+                        El módulo de reportes permitirá consultar indicadores del sistema y descargar archivos generados
+                        bajo demanda.
+                        Los reportes deberán respetar los roles y la propiedad de los eventos.
+                    </p>
+
+                    <table class="rubric">
+                        <thead>
+                            <tr>
+                                <th>Método</th>
+                                <th>Endpoint</th>
+                                <th>Acceso</th>
+                                <th>Resultado</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+
+                            <tr>
+                                <td><code>GET</code></td>
+                                <td><code>/api/reports/events/{eventId}/registrations.pdf</code></td>
+                                <td>Propietario o ADMIN</td>
+                                <td>
+                                    Listado de inscritos en formato PDF.
+                                </td>
+                            </tr>
+                            <tr>
+                                <td><code>GET</code></td>
+                                <td><code>/api/reports/events/{eventId}/registrations.xlsx</code></td>
+                                <td>Propietario o ADMIN</td>
+                                <td>
+                                    Listado de inscritos en formato Excel.
+                                </td>
+                            </tr>
+                            <tr>
+                                <td><code>GET</code></td>
+                                <td><code>/api/registrations/{id}/certificate.pdf</code></td>
+                                <td>Participante propietario</td>
+                                <td>
+                                    Comprobante de una inscripción confirmada.
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+
+                    <p>
+                        Los endpoints de estadísticas deberán aceptar filtros por rango de fechas. Los archivos deberán
+                        generarse bajo
+                        demanda y responder con los encabezados <code>Content-Type</code> y
+                        <code>Content-Disposition</code> correctos.
+                    </p>
+
+                    <p>Ejemplo:</p>
+
+                    <pre class="code-line">Content-Type: application/pdf
+Content-Disposition: attachment; filename="registrations-event-15.pdf"</pre>
+
+
+                    <h4>15. Despliegue</h4>
+                    <ul>
+                        <li>Desplegar el backend mediante Docker en Render o una plataforma equivalente.</li>
+                        <li>Desplegar PostgreSQL y Redis o un servicio compatible.</li>
+                        <li>Configurar secretos y conexiones mediante variables de entorno.</li>
+                        <li>Incluir <code>Dockerfile</code> y <code>render.yaml</code> o configuración equivalente.</li>
+                        <li>Mantener disponibles la API, Swagger y Actuator Health durante la evaluación.</li>
+                    </ul>
+                    <p>Para Render se deberá considerar como mínimo:</p>
+                    <pre class="code-line">server.port=${PORT:8080}
+spring.jpa.open-in-view=false
+spring.datasource.hikari.maximum-pool-size=5</pre>
+                    <p>
+                        PostgreSQL y Redis deberán ejecutarse como servicios separados. El contenedor de Spring Boot
+                        no deberá almacenar archivos permanentes; los reportes se generarán bajo demanda. La memoria de
+                        la JVM deberá limitarse mediante <code>JAVA_TOOL_OPTIONS</code> para evitar superar los recursos
+                        de la instancia.
+                    </p>
+
+                    <h4>16. Variables de Entorno</h4>
+                    <p>
+                        Todas las credenciales, secretos y configuraciones sensibles deberán definirse mediante
+                        variables de entorno. No se permite almacenar información sensible en el código fuente ni en
+                        archivos de configuración versionados.
+
+                    </p>
+
+                    <p>
+                        Las variables de entorno mínimas deberán incluir, entre otras:
+                    <pre class="code-line">
+DB_URL
+DB_USERNAME
+DB_PASSWORD
+
+REDIS_HOST
+REDIS_PORT
+REDIS_PASSWORD
+
+JWT_SECRET
+JWT_ACCESS_EXPIRATION
+JWT_REFRESH_EXPIRATION
+
+ALLOWED_ORIGINS
+PORT
+
+REDIS_URL
+                        </pre>
+                    </p>
+
+                    <h4>17. Zona Horaria</h4>
+                    <p>
+                        La API deberá manejar correctamente las zonas horarias. Se recomienda almacenar los instantes
+                        en UTC y convertirlos a la zona de negocio al mostrarlos en la interfaz o en los reportes.
+                    </p>
+                    <p>
+                        Zona de negocio: America/Guayaquil
+                        Almacenamiento de instantes: UTC
+                        Formato de intercambio: ISO 8601
+                    </p>
+                </td>
+            </tr>
+
+            <tr>
+                <td colspan="5">
+                    <h3>ENTREGABLES</h3>
+                    <ol>
+                        <li>
+                            <strong>Repositorio Git:</strong>
+                            <ul>
+                                <li>Código fuente completo.</li>
+                                <li>Historial de commits de los dos integrantes.</li>
+                                <li>Ramas o Pull Requests utilizados durante el desarrollo.</li>
+                            </ul>
+                        </li>
+                        <li><strong>Base de datos:</strong> diagrama entidad-relación, migraciones Flyway y datos
+                            iniciales.</li>
+                        <li><strong>Documentación:</strong> README con instalación, variables, ejecución, pruebas y
+                            despliegue.</li>
+                        <li><strong>API:</strong> enlace público del backend y enlace de Swagger UI.</li>
+                        <li><strong>Pruebas:</strong> evidencias y reporte de ejecución.</li>
+                        <li><strong>Cliente de prueba:</strong> colección Postman o Bruno.</li>
+                        <li><strong>Video:</strong> presentación técnica de máximo 10 minutos.</li>
+                        <li><strong>AVAC:</strong> entregar únicamente el enlace al repositorio remoto.</li>
+                    </ol>
+
+                    <h4>Participación en Git</h4>
+                    <ul>
+                        <li>Cada integrante deberá realizar al menos 5 commits funcionales y verificables.</li>
+                        <li>Los commits de cada integrante deberán distribuirse en al menos 3 días diferentes.</li>
+                        <li>Los mensajes deberán describir el cambio realizado.</li>
+                        <li>No se considerarán commits vacíos, cambios de formato usados para aumentar el conteo ni
+                            cargas completas realizadas al final.</li>
+                        <li>Si un integrante presenta aportes mínimos, no puede explicar su código o concentra todos sus
+                            commits el día de la entrega, se reducirá el criterio de calidad y trabajo colaborativo.
+                        </li>
+                    </ul>
+                </td>
+            </tr>
+
+            <tr>
+                <td colspan="5">
+                    <h3>CRITERIOS DE EVALUACIÓN SOBRE EXPOSICIÓN ORAL DEL PROYECTO INTEGRADOR</h3>
+                    <table class="rubric">
+                        <thead>
+                            <tr>
+                                <th>Criterio</th>
+                                <th>Excelente</th>
+                                <th>Bueno</th>
+                                <th>Insuficiente</th>
+                                <th>No presenta</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Arquitectura modular, DTO, mapeadores y calidad del código</td>
+                                <td class="center">7</td>
+                                <td class="center">5</td>
+                                <td class="center">3</td>
+                                <td class="center">0</td>
+                            </tr>
+                            <tr>
+                                <td>Modelo relacional, migraciones y persistencia</td>
+                                <td class="center">6</td>
+                                <td class="center">4</td>
+                                <td class="center">2</td>
+                                <td class="center">0</td>
+                            </tr>
+                            <tr>
+                                <td>Autenticación JWT, refresh token y autorización</td>
+                                <td class="center">10</td>
+                                <td class="center">7</td>
+                                <td class="center">4</td>
+                                <td class="center">0</td>
+                            </tr>
+                            <tr>
+                                <td>Endpoints, reglas de negocio y transacciones</td>
+                                <td class="center">10</td>
+                                <td class="center">7</td>
+                                <td class="center">4</td>
+                                <td class="center">0</td>
+                            </tr>
+                            <tr>
+                                <td>Redis, rate limiting, bloqueos, CORS</td>
+                                <td class="center">7</td>
+                                <td class="center">5</td>
+                                <td class="center">3</td>
+                                <td class="center">0</td>
+                            </tr>
+                            <tr>
+                                <td>Validaciones y manejo centralizado de excepciones</td>
+                                <td class="center">5</td>
+                                <td class="center">3</td>
+                                <td class="center">2</td>
+                                <td class="center">0</td>
+                            </tr>
+                            <tr>
+                                <td>Swagger protegido, Actuator y observabilidad</td>
+                                <td class="center">5</td>
+                                <td class="center">3</td>
+                                <td class="center">2</td>
+                                <td class="center">0</td>
+                            </tr>
+
+                            <tr>
+                                <td>Docker, despliegue y disponibilidad pública</td>
+                                <td class="center">3</td>
+                                <td class="center">2</td>
+                                <td class="center">1</td>
+                                <td class="center">0</td>
+                            </tr>
+                            <tr>
+                                <td>Documentación, exposición y participación en Git</td>
+                                <td class="center">3</td>
+                                <td class="center">2</td>
+                                <td class="center">1</td>
+                                <td class="center">0</td>
+                            </tr>
+                            <tr>
+                                <td>Docuemetación informe - video </td>
+                                <td class="center">14</td>
+                                <td class="center">8</td>
+                                <td class="center">4</td>
+                                <td class="center">0</td>
+                            </tr>
+                            <tr class="subtotal">
+                                <td>TOTAL</td>
+                                <td class="center">70</td>
+                                <td colspan="3">Conversión: calificación = puntaje obtenido × 20 ÷ 70</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </td>
+            </tr>
+
+            <tr>
+                <td colspan="5">
+                    <strong>RESULTADO(S) OBTENIDO(S):</strong>
+                    <p>
+                        API REST segura, documentada, probada y desplegada, con persistencia relacional, Redis,
+                        controles de acceso, observabilidad y reportes descargables.
+                    </p>
+                </td>
+            </tr>
+
+            <tr>
+                <td colspan="5">
+                    <strong>CONCLUSIONES:</strong>
+                    <ul>
+                        <li>Aplicar arquitectura cliente-servidor y diseño modular en una solución backend.</li>
+                        <li>Integrar controles de seguridad en las diferentes capas de una API REST.</li>
+                        <li>Desplegar servicios, base de datos y Redis en un entorno accesible públicamente.</li>
+                    </ul>
+                </td>
+            </tr>
+
+            <tr>
+                <td colspan="5">
+                    <strong>RECOMENDACIONES:</strong>
+                    <ul>
+                        <li>Probar el despliegue con anticipación debido al tiempo de arranque de los servicios
+                            gratuitos.</li>
+                        <li>No publicar secretos, tokens ni credenciales en el repositorio.</li>
+                        <li>Verificar Swagger, Actuator Health, PostgreSQL y Redis antes de la exposición.</li>
+                    </ul>
+                </td>
+            </tr>
+        </table>
+
+        <div style="text-align: center; margin: 0 auto;">
+            <p class="signature">Docente / Técnico Docente: Ing. Pablo Torres</p>
+            <p>Firma: _______________________________</p>
+        </div>
+
+        <div class="footer">
+            <span>Formato aprobado con Res. C.S. N° 076-04-2016-04-20</span>
+            <span>Proyecto Integrador</span>
+        </div>
+    </main>
+
+    <script src="../js/protection-security-overlay.js"></script>
+    <script src="../js/protection.js"></script>
+</body>
+
+</html>

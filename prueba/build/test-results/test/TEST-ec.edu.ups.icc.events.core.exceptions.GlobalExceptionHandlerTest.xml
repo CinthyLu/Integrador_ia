@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="ec.edu.ups.icc.events.core.exceptions.GlobalExceptionHandlerTest" tests="8" skipped="0" failures="0" errors="0" timestamp="2026-07-25T20:18:35" hostname="CINTHYLU" time="1.085">
+  <properties/>
+  <testcase name="shouldReturn409WhenBusinessRuleIsViolated()" classname="ec.edu.ups.icc.events.core.exceptions.GlobalExceptionHandlerTest" time="0.619"/>
+  <testcase name="shouldReturn404WhenResourceDoesNotExist()" classname="ec.edu.ups.icc.events.core.exceptions.GlobalExceptionHandlerTest" time="0.039"/>
+  <testcase name="shouldReturn429WhenRateLimitIsExceeded()" classname="ec.edu.ups.icc.events.core.exceptions.GlobalExceptionHandlerTest" time="0.023"/>
+  <testcase name="shouldReturn400WhenRequestIsInvalid()" classname="ec.edu.ups.icc.events.core.exceptions.GlobalExceptionHandlerTest" time="0.262"/>
+  <testcase name="shouldReturn400ForBadRequestException()" classname="ec.edu.ups.icc.events.core.exceptions.GlobalExceptionHandlerTest" time="0.031"/>
+  <testcase name="shouldReturn500ForUnexpectedException()" classname="ec.edu.ups.icc.events.core.exceptions.GlobalExceptionHandlerTest" time="0.03"/>
+  <testcase name="shouldReturn403ForForbiddenException()" classname="ec.edu.ups.icc.events.core.exceptions.GlobalExceptionHandlerTest" time="0.033"/>
+  <testcase name="shouldReturn401ForUnauthorizedException()" classname="ec.edu.ups.icc.events.core.exceptions.GlobalExceptionHandlerTest" time="0.041"/>
+  <system-out><![CDATA[2026-07-25T15:18:35.763-05:00  INFO 21296 --- [academic-events-api] [    Test worker] o.s.mock.web.MockServletContext          : Initializing Spring TestDispatcherServlet ''
+2026-07-25T15:18:35.763-05:00  INFO 21296 --- [academic-events-api] [    Test worker] o.s.t.web.servlet.TestDispatcherServlet  : Initializing Servlet ''
+2026-07-25T15:18:35.766-05:00  INFO 21296 --- [academic-events-api] [    Test worker] o.s.t.web.servlet.TestDispatcherServlet  : Completed initialization in 1 ms
+2026-07-25T15:18:36.117-05:00  INFO 21296 --- [academic-events-api] [    Test worker] o.s.mock.web.MockServletContext          : Initializing Spring TestDispatcherServlet ''
+2026-07-25T15:18:36.118-05:00  INFO 21296 --- [academic-events-api] [    Test worker] o.s.t.web.servlet.TestDispatcherServlet  : Initializing Servlet ''
+2026-07-25T15:18:36.118-05:00  INFO 21296 --- [academic-events-api] [    Test worker] o.s.t.web.servlet.TestDispatcherServlet  : Completed initialization in 0 ms
+2026-07-25T15:18:36.145-05:00  INFO 21296 --- [academic-events-api] [    Test worker] o.s.mock.web.MockServletContext          : Initializing Spring TestDispatcherServlet ''
+2026-07-25T15:18:36.146-05:00  INFO 21296 --- [academic-events-api] [    Test worker] o.s.t.web.servlet.TestDispatcherServlet  : Initializing Servlet ''
+2026-07-25T15:18:36.146-05:00  INFO 21296 --- [academic-events-api] [    Test worker] o.s.t.web.servlet.TestDispatcherServlet  : Completed initialization in 0 ms
+2026-07-25T15:18:36.173-05:00  INFO 21296 --- [academic-events-api] [    Test worker] o.s.mock.web.MockServletContext          : Initializing Spring TestDispatcherServlet ''
+2026-07-25T15:18:36.175-05:00  INFO 21296 --- [academic-events-api] [    Test worker] o.s.t.web.servlet.TestDispatcherServlet  : Initializing Servlet ''
+2026-07-25T15:18:36.177-05:00  INFO 21296 --- [academic-events-api] [    Test worker] o.s.t.web.servlet.TestDispatcherServlet  : Completed initialization in 0 ms
+2026-07-25T15:18:36.437-05:00  INFO 21296 --- [academic-events-api] [    Test worker] o.s.mock.web.MockServletContext          : Initializing Spring TestDispatcherServlet ''
+2026-07-25T15:18:36.437-05:00  INFO 21296 --- [academic-events-api] [    Test worker] o.s.t.web.servlet.TestDispatcherServlet  : Initializing Servlet ''
+2026-07-25T15:18:36.438-05:00  INFO 21296 --- [academic-events-api] [    Test worker] o.s.t.web.servlet.TestDispatcherServlet  : Completed initialization in 1 ms
+2026-07-25T15:18:36.467-05:00  INFO 21296 --- [academic-events-api] [    Test worker] o.s.mock.web.MockServletContext          : Initializing Spring TestDispatcherServlet ''
+2026-07-25T15:18:36.467-05:00  INFO 21296 --- [academic-events-api] [    Test worker] o.s.t.web.servlet.TestDispatcherServlet  : Initializing Servlet ''
+2026-07-25T15:18:36.468-05:00  INFO 21296 --- [academic-events-api] [    Test worker] o.s.t.web.servlet.TestDispatcherServlet  : Completed initialization in 1 ms
+2026-07-25T15:18:36.500-05:00  INFO 21296 --- [academic-events-api] [    Test worker] o.s.mock.web.MockServletContext          : Initializing Spring TestDispatcherServlet ''
+2026-07-25T15:18:36.500-05:00  INFO 21296 --- [academic-events-api] [    Test worker] o.s.t.web.servlet.TestDispatcherServlet  : Initializing Servlet ''
+2026-07-25T15:18:36.501-05:00  INFO 21296 --- [academic-events-api] [    Test worker] o.s.t.web.servlet.TestDispatcherServlet  : Completed initialization in 0 ms
+2026-07-25T15:18:36.540-05:00  INFO 21296 --- [academic-events-api] [    Test worker] o.s.mock.web.MockServletContext          : Initializing Spring TestDispatcherServlet ''
+2026-07-25T15:18:36.540-05:00  INFO 21296 --- [academic-events-api] [    Test worker] o.s.t.web.servlet.TestDispatcherServlet  : Initializing Servlet ''
+2026-07-25T15:18:36.540-05:00  INFO 21296 --- [academic-events-api] [    Test worker] o.s.t.web.servlet.TestDispatcherServlet  : Completed initialization in 0 ms
+]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="ec.edu.ups.icc.events.security.config.SecurityBeansConfigTest" tests="4" skipped="0" failures="0" errors="0" timestamp="2026-07-25T20:18:36" hostname="CINTHYLU" time="1.604">
+  <properties/>
+  <testcase name="shouldEncryptPasswordUsingBCrypt()" classname="ec.edu.ups.icc.events.security.config.SecurityBeansConfigTest" time="0.387"/>
+  <testcase name="shouldRejectIncorrectPassword()" classname="ec.edu.ups.icc.events.security.config.SecurityBeansConfigTest" time="0.41"/>
+  <testcase name="shouldCreatePasswordEncoder()" classname="ec.edu.ups.icc.events.security.config.SecurityBeansConfigTest" time="0.003"/>
+  <testcase name="shouldGenerateDifferentHashesForSamePassword()" classname="ec.edu.ups.icc.events.security.config.SecurityBeansConfigTest" time="0.795"/>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>
