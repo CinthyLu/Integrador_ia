@@ -207,12 +207,12 @@ docker compose up -d postgres redis
 ### **Paso 3: Cargar el esquema y los datos iniciales**
 Ahora inyectaremos las tablas y la precarga de usuarios del script `01_schema_and_data.sql` dentro del contenedor de PostgreSQL:
 ```powershell
-docker exec -i academic_events_db_container psql -U postgres_user -d academic_events_db < 01_schema_and_data.sql
+docker exec -i academic_events_db_container psql -U postgres -d academic_events_db < 01_schema_and_data.sql
 ```
 
 *(Opcional) **¿Cómo verificar que se cargaron?** Ejecuta este comando para ver el listado de tablas:*
 ```powershell
-docker exec -it academic_events_db_container psql -U postgres_user -d academic_events_db -c "\dt"
+docker exec -it academic_events_db_container psql -U postgres -d academic_events_db -c "\dt"
 ```
 *Deberías ver una lista con las tablas `users`, `roles`, `events`, `registrations`, etc.*
 
